@@ -1,5 +1,6 @@
 from django import forms  
-from .models import Student  
+from .models import Student
+from django.forms.widgets import NumberInput  
 
 class StudentForm(forms.ModelForm):  
     class Meta:  
@@ -14,7 +15,7 @@ class StudentForm(forms.ModelForm):
             'phone': forms.TextInput(attrs={'class': 'container', 'placeholder': 'Phone Number'}),
             'email': forms.EmailInput(attrs={'class': 'container', 'placeholder': 'Email'}),
             'level': forms.Select(attrs={'class': 'container'}),
-            'dob': forms.DateInput(attrs={'class': 'container', 'placeholder': 'yyyy-mm-dd'}),
+            'dob': forms.DateInput(attrs={'class': 'container', 'type': 'date', 'placeholder': 'dd/mm/yyyy'}),
             'gender': forms.Select(attrs={'class': 'container'}),
             'faculty': forms.Select(attrs={'class': 'container'}),
             'department': forms.TextInput(attrs={'class': 'container', 'placeholder': 'Department'}),
